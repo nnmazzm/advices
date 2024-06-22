@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+{% extends 'base.html' %}
+
+{% block title %}Home - {{ super() }}{% endblock %}
+
+{% block content %}
+    <h2>Welcome to Advice Site</h2>
+    <p>This site provides you with various advices.</p>
+{% endblock %}
+
+</body>
+</html>

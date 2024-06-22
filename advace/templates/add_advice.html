@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+{% extends 'base.html' %}
+
+{% block title %}Add Advice - {{ super() }}{% endblock %}
+
+{% block content %}
+    <h2>Add Advice</h2>
+    <form action="{{ url_for('get_advice', id_num='') }}" method="GET">
+        <input type="text" name="id_num" placeholder="Enter ID...">
+        <button type="submit">Get Advice</button>
+    </form>
+    {% with messages = get_flashed_messages() %}
+        {% if messages %}
+            <ul class="flashes">
+            {% for message in messages %}
+                <li>{{ message }}</li>
+            {% endfor %}
+            </ul>
+        {% endif %}
+    {% endwith %}
+{% endblock %}
+
+</body>
+</html>
